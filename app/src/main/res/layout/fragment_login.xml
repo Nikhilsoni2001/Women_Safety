@@ -29,6 +29,7 @@
         android:layout_marginTop="60dp"
         android:fontFamily="@font/roboto"
         android:text="@string/women"
+        android:textColor="@color/black"
         android:textSize="45sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/textView4"
@@ -71,49 +72,42 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/elPassword"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        style="@style/inputLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"
         android:hint="@string/password"
-        app:boxStrokeColor="@android:color/black"
-        app:boxStrokeWidthFocused="2dp"
-        app:hintTextColor="@android:color/black"
         app:layout_constraintBottom_toTopOf="@+id/btnLoginWithOTP"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/MobileLogin"
         app:passwordToggleEnabled="true"
-        app:startIconDrawable="@drawable/ic_action_password"
-        app:startIconTint="@android:color/black">
+        app:startIconDrawable="@drawable/ic_action_password">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPassword"
-            android:maxLines="1" />
+            android:maxLines="1"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/MobileLogin"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        style="@style/inputLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"
         android:layout_marginTop="8dp"
         android:hint="@string/mobile"
-        android:textColorHint="@android:color/black"
-        app:boxStrokeColor="@android:color/black"
-        app:boxStrokeWidthFocused="2dp"
         app:endIconMode="clear_text"
-        app:errorEnabled="true"
         app:layout_constraintBottom_toTopOf="@+id/elPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/countryCodeHolderLogin"
-        app:startIconDrawable="@drawable/ic_action_mobile"
-        app:startIconTint="@android:color/black">
+        app:startIconDrawable="@drawable/ic_action_mobile">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etMobileNumberLogin"
@@ -121,7 +115,9 @@
             android:layout_height="wrap_content"
             android:inputType="phone"
             android:maxLength="10"
-            android:maxLines="1" />
+            android:maxLines="1"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black" />
     </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -167,7 +163,10 @@
         style="@style/Widget.MaterialComponents.Button"
         android:layout_width="180dp"
         android:layout_height="60dp"
+        android:backgroundTint="@color/colorPrimary"
         android:text="@string/login"
+        android:textColor="@color/white"
+        android:textSize="18sp"
         app:cornerRadius="30dp"
         app:layout_constraintBottom_toTopOf="@+id/btnCreateAccountLogin"
         app:layout_constraintEnd_toEndOf="parent"

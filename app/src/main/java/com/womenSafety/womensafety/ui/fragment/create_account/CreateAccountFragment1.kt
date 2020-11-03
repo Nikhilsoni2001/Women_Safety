@@ -10,22 +10,23 @@ import com.google.android.material.button.MaterialButton
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 import com.womenSafety.womensafety.R
+import com.womenSafety.womensafety.ui.fragment.LoginFragment
 import com.womenSafety.womensafety.ui.fragment.WelcomeScreenFragment
 import com.womenSafety.womensafety.util.Validations
 
 class CreateAccountFragment1 : Fragment() {
 
-    lateinit var elFullName: TextInputLayout
-    lateinit var etFullName: TextInputEditText
-    lateinit var elUsername: TextInputLayout
-    lateinit var etUsername: TextInputEditText
-    lateinit var elEmail: TextInputLayout
-    lateinit var etEmail: TextInputEditText
-    lateinit var elPassword: TextInputLayout
-    lateinit var etPassword: TextInputEditText
-    lateinit var btnNext: MaterialButton
-    lateinit var btnLogin: MaterialButton
-    lateinit var backButton: ImageView
+    private lateinit var elFullName: TextInputLayout
+    private lateinit var etFullName: TextInputEditText
+    private lateinit var elUsername: TextInputLayout
+    private lateinit var etUsername: TextInputEditText
+    private lateinit var elEmail: TextInputLayout
+    private lateinit var etEmail: TextInputEditText
+    private lateinit var elPassword: TextInputLayout
+    private lateinit var etPassword: TextInputEditText
+    private lateinit var btnNext: MaterialButton
+    private lateinit var btnLogin: MaterialButton
+    private lateinit var backButton: ImageView
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -43,14 +44,14 @@ class CreateAccountFragment1 : Fragment() {
 
         btnLogin.setOnClickListener {
             parentFragmentManager.beginTransaction()
-                .replace(R.id.container, CreateAccountFragment2()).commit()
+                .replace(R.id.container, LoginFragment()).commit()
         }
 
         backButton.setOnClickListener {
-            parentFragmentManager.beginTransaction().replace(R.id.container, WelcomeScreenFragment())
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.container, WelcomeScreenFragment())
                 .commit()
         }
-
         return view
     }
 
@@ -86,7 +87,7 @@ class CreateAccountFragment1 : Fragment() {
                         bundle.putString("password", etPassword.text.toString().trim())
                         fragment.arguments = bundle
 
-                        childFragmentManager.beginTransaction().replace(R.id.container, fragment)
+                        parentFragmentManager.beginTransaction().replace(R.id.container, fragment)
                             .commit()
                     } else {
                         elPassword.error = "Password is too Short!!"
